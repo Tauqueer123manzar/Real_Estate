@@ -5,6 +5,7 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -46,6 +47,7 @@ export default function Home() {
     fetchOfferListings();
   }, []);
   return (
+    <>
     <div>
       {/* top */}
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
@@ -130,5 +132,7 @@ export default function Home() {
         )}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }

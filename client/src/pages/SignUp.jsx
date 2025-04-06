@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import OAuth from '../components/OAuth';
+import Footer from '../components/Footer';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -17,7 +18,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch('/api/auth/signup', {
+      const res = await fetch(`/api/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,6 +41,7 @@ export default function SignUp() {
     }
   };
   return (
+    <>
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
@@ -81,5 +83,7 @@ export default function SignUp() {
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
+    <Footer/>
+    </>
   );
 }
