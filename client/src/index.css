@@ -5,3 +5,10 @@
 body{
     background-color: rgb(241, 245, 241);
 }
+/* global styles or index.css */
+html,
+body {
+  height: 100%;
+}
+
+
